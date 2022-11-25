@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="{{ csrf.keys.name }}" content="{{ csrf.name }}">
+    <meta name="{{ csrf.keys.value }}" content="{{ csrf.value }}">
+    <meta name="base_path" content="{{ base_path }}">
+    <title>Slim Template</title>
+</head>
+<body>
+{% if isDebug %}
+    <div id="root"></div>
+    <script type="module">
+        import RefreshRuntime from 'http://localhost:5173/@react-refresh'
+        RefreshRuntime.injectIntoGlobalHook(window)
+        window.$RefreshReg$ = () => {}
+        window.$RefreshSig$ = () => (type) => type
+        window.__vite_plugin_react_preamble_installed__ = true
+    </script>
+    <script type="module" src="http://localhost:5173/@vite/client"></script>
+    <script type="module" src="http://localhost:5173/src/main.tsx"></script>
+{% endif %}
+</body>
+</html>
